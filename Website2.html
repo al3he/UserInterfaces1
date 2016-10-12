@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<head>
+   
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SoulSound</title>
+
+    <!-- THIS WEBSITE IS PROBLEM 2 for USER INTERFACES -->
+
+    <!-- My style sheet -->
+    <link href="Website2Style.css" rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="Website2Script.js"></script>
+
+<div class="myHeading">
+    <!-- SoulSound image -->
+    <img src="http://i67.tinypic.com/2evvkpi.png" class="soulSoundImage">
+</div>
+<nav>
+    <div class="container">
+
+        <div class="collapse navbar-collapse hidden-xs">
+            <ul class="nav navbar-nav navbar-left hidden-xs">
+                <li class="active subHeadingDesign"><a href="#">Log In</a> </li>
+                <li class="active subHeadingDesign"> <a href="#">Sign Up</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<hr>
+<hr>
+<div class="container">
+    <div class="row text-center">
+        <h2 class = "subHeadingDesign">Trending Artists in Your Network</h2>
+        <div class="boxSize">
+
+            <div class="col-sm-4 col-md-4 col-lg-4 col-xs-12">
+                <div class="thumbnail"> <img src="http://edmchicago.com/wp-content/uploads/2015/08/ile-soniq-day-1-50-of-821-1366x800.jpg" alt="Thumbnail Image 1" class="img-responsive">
+                    <div class="caption">
+                        <h3>The Chainsmokers</h3>
+                        <p class=fontFamily>The Chainsmokers are an American DJ duo, their signature sound has its foundations in Indie, Progressive and Pop Music. </p>
+                        <p class=boldText>Genres: Electro house, EDM, Progressive house </p>
+                    </div>
+
+                    <div class="bottom">
+
+                        <button class="btn btn-default btn-sm" id="likeBtn" onclick="turnRed()" rel="publisher"><span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span></button>
+                        <button class="btn btn-info btn-sm" id="comBtn" rel="publisher"> <span class="glyphicon glyphicon-comment" aria-hidden="true"></span></button>
+                        <button class="btn btn-group btn-sm" rel="publisher"> <span class="glyphicon glyphicon-retweet" aria-hidden="true"></span></button>
+                        <button class="btn btn-primary btn-sm" id = "shareBtn" onclick = "shared()" rel="publisher"> <span class="glyphicon glyphicon-share" aria-hidden="true"></span></button>       
+                    </div>
+
+                    <div class="published" id="published">
+                        <table class="comGrid">
+                        </table>
+                    </div>
+
+                <div class="panel" id="panel">
+                                <form method="post" name="comments" id="comments">
+                                    <div>
+                                        <textarea name="comments" id = "blank">Leave a comment...</textarea>
+                                    </div>
+                                    <input type="button" value="Submit" onclick="publishCom()" id="submitBtn">
+                                </form>
+                            </div>
+                        </div>
+                </div>
+
+            <div class="col-sm-4 col-md-4 col-lg-4 col-xs-12">
+                <div class="thumbnail"> <img src="http://odesza.com/wp-content/uploads/2015/04/Site-Image.jpg" alt="Thumbnail Image 1" class="img-responsive">
+                    <div class="caption">
+                        <h3>ODESZA</h3>
+                        <p class=fontFamily>Odesza are an American electronic music duo from Seattle consisting of Harrison Mills and Clayton Knight. The group was formed in 2012.</p>
+                        <p class=boldText>Genres: Indie etronic, Electropop, Chillwave </p>
+                        <div class="bottom">
+                            <a class="btn btn-default btn-sm" rel="publisher" href="https://plus.google.com/shahnuralam"> <span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span></a>
+                            <a class="btn btn-info btn-sm" rel="publisher" href="https://plus.google.com/shahnuralam"> <span class="glyphicon glyphicon-comment" aria-hidden="true"></span></a>
+                            <a class="btn btn-group btn-sm" rel="publisher" href="https://plus.google.com/shahnuralam"> <span class="glyphicon glyphicon-retweet" aria-hidden="true"></span></a>
+                            <a class="btn btn-primary btn-sm" rel="publisher" href="https://plus.google.com/shahnuralam"> <span class="glyphicon glyphicon-share" aria-hidden="true"></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 col-md-4 col-lg-4 col-xs-12">
+                <div class="thumbnail"> <img src="https://i.ytimg.com/vi/4vgZMbpEj2M/maxresdefault.jpg" alt="Thumbnail Image 1" class="img-responsive">
+                    <div class="caption">
+                        <h3>Chance the Rapper</h3>
+                        <p class=fontFamily>Chance the Rapper American hip hop recording artist from the West Chatham neighborhood of Chicago, Illinois. </p>
+                        <p class=boldText>Genres: Hip hop, Gospel rap </p>
+                        <div class="bottom">
+                            <a class="btn btn-default btn-sm" rel="publisher" href="https://plus.google.com/shahnuralam"> <span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span></a>
+                            <a class="btn btn-info btn-sm" rel="publisher" href="https://plus.google.com/shahnuralam"> <span class="glyphicon glyphicon-comment" aria-hidden="true"></span></a>
+                            <a class="btn btn-group btn-sm" rel="publisher" href="https://plus.google.com/shahnuralam"> <span class="glyphicon glyphicon-retweet" aria-hidden="true"></span></a>
+                            <a class="btn btn-primary btn-sm" rel="publisher" href="https://plus.google.com/shahnuralam"> <span class="glyphicon glyphicon-share" aria-hidden="true"></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="boxSize">
+        <div class="row text-center">
+            <div class="col-sm-4 col-md-4 col-lg-4 col-xs-12">
+                <div class="thumbnail"> <img src="http://www.mtv.com/crop-images/2013/09/12/young_the_giant_credit_pieter_van_hattem.jpg" alt="Thumbnail Image 1" class="img-responsive">
+                    <div class="caption">
+                        <h3>Young the Giant</h3>
+                        <p class=fontFamily>Young the Giant is an American rock band that formed in Irvine, California, in 2004. </p>
+                        <p class=boldText>Genres: Alternative rock, Indie rock</p>
+                        <div class="bottom">
+                            <a class="btn btn-default btn-sm" rel="publisher" href="https://plus.google.com/shahnuralam"> <span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span></a>
+                            <a class="btn btn-info btn-sm" rel="publisher" href="https://plus.google.com/shahnuralam"> <span class="glyphicon glyphicon-comment" aria-hidden="true"></span></a>
+                            <a class="btn btn-group btn-sm" rel="publisher" href="https://plus.google.com/shahnuralam"> <span class="glyphicon glyphicon-retweet" aria-hidden="true"></span></a>
+                            <a class="btn btn-primary btn-sm" rel="publisher" href="https://plus.google.com/shahnuralam"> <span class="glyphicon glyphicon-share" aria-hidden="true"></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                <div class="thumbnail"> <img src="https://media.giphy.com/media/m07UQwOt30eA0/giphy.gif" alt="Thumbnail Image 1" class="img-responsive">
+                    <div class="caption">
+                        <h3>Tame Impala</h3>
+                        <p class=fontFamily>Tame Impala is an Australian psychedelic rock band founded by Kevin Parker in 2007, which began as a recording project for Parker.</p>
+                        <p class=boldText>Genres: Psychedelic rock, Psychedelic pop, Neo-psychedelia</p>
+                        <div class="bottom">
+                            <a class="btn btn-default btn-sm" rel="publisher" href="https://plus.google.com/shahnuralam"> <span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span></a>
+                            <a class="btn btn-info btn-sm" rel="publisher" href="https://plus.google.com/shahnuralam"> <span class="glyphicon glyphicon-comment" aria-hidden="true"></span></a>
+                            <a class="btn btn-group btn-sm" rel="publisher" href="https://plus.google.com/shahnuralam"> <span class="glyphicon glyphicon-retweet" aria-hidden="true"></span></a>
+                            <a class="btn btn-primary btn-sm" rel="publisher" href="https://plus.google.com/shahnuralam"> <span class="glyphicon glyphicon-share" aria-hidden="true"></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                <div class="thumbnail"> <img src="http://voxatl.com/wp-content/uploads/2016/06/Jillian-Banks-HD-Images.jpg" alt="Thumbnail Image 1" class="img-responsive">
+                    <div class="caption">
+                        <h3>Banks</h3>
+                        <p class=fontFamily>Jillian Rose Banks is an American singer and songwriter who crafts moody, downcast, alternative pop with shades of contemporary R&B. </p>
+                        <p class=boldText>Genres: Alternative R&B, Trip hop, Indie pop</p>
+                        <div class="bottom">
+                            <a class="btn btn-default btn-sm" rel="publisher" href="https://plus.google.com/shahnuralam"> <span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span></a>
+                            <a class="btn btn-info btn-sm" rel="publisher" href="https://plus.google.com/shahnuralam"> <span class="glyphicon glyphicon-comment" aria-hidden="true"></span></a>
+                            <a class="btn btn-group btn-sm" rel="publisher" href="https://plus.google.com/shahnuralam"> <span class="glyphicon glyphicon-retweet" aria-hidden="true"></span></a>
+                            <a class="btn btn-primary btn-sm" rel="publisher" href="https://plus.google.com/shahnuralam"> <span class="glyphicon glyphicon-share" aria-hidden="true"></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="boxSize">
+        <div class="row text-center">
+            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                <div class="thumbnail"> <img src="http://chuffmedia.com/images/artist-images/252/haim_photo_3.jpg" alt="Thumbnail Image 1" class="img-responsive">
+                    <div class="caption">
+                        <h3>Haim</h3>
+                        <p class=fontFamily>Haim is an American pop rock band from Los Angeles. The band consists of sisters Este, Danielle and Alana Haim, and drummer Dash Hutton.</p>
+                        <p class=boldText>Genres: Pop rock, soft rock, R&B</p>
+                        <div class="bottom">
+                            <a class="btn btn-default btn-sm" rel="publisher" href="https://plus.google.com/shahnuralam"> <span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span></a>
+                            <a class="btn btn-info btn-sm" rel="publisher" href="https://plus.google.com/shahnuralam"> <span class="glyphicon glyphicon-comment" aria-hidden="true"></span></a>
+                            <a class="btn btn-group btn-sm" rel="publisher" href="https://plus.google.com/shahnuralam"> <span class="glyphicon glyphicon-retweet" aria-hidden="true"></span></a>
+                            <a class="btn btn-primary btn-sm" rel="publisher" href="https://plus.google.com/shahnuralam"> <span class="glyphicon glyphicon-share" aria-hidden="true"></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                <div class="thumbnail"> <img src="https://theknockturnal.com/wp-content/uploads/2016/08/flume_og.jpg" alt="Thumbnail Image 1" class="img-responsive">
+                    <div class="caption">
+                        <h3>Flume</h3>
+                        <p class=fontFamily>Harley Edward Streten, better known by his stage name Flume, is an Australian record producer and musician. His self-titled debut studio album, Flume, reached double-platinum accreditation in Australia.</p>
+                        <p class=boldText>Genres: Electronica, downtempo, experimental</p>
+                        <div class="bottom">
+                            <a class="btn btn-default btn-sm" rel="publisher" href="https://plus.google.com/shahnuralam"> <span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span></a>
+                            <a class="btn btn-info btn-sm" rel="publisher" href="https://plus.google.com/shahnuralam"> <span class="glyphicon glyphicon-comment" aria-hidden="true"></span></a>
+                            <a class="btn btn-group btn-sm" rel="publisher" href="https://plus.google.com/shahnuralam"> <span class="glyphicon glyphicon-retweet" aria-hidden="true"></span></a>
+                            <a class="btn btn-primary btn-sm" rel="publisher" href="https://plus.google.com/shahnuralam"> <span class="glyphicon glyphicon-share" aria-hidden="true"></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                <div class="thumbnail"> <img src="http://www.indieshuffle.com/bundles/webbundle/images/artwork/thumb_tweet_image/chet-faker-ws-1440.jpg" alt="Thumbnail Image 1" class="img-responsive">
+                    <div class="caption">
+                        <h3>Chet Faker</h3>
+                        <p class=fontFamily>HNicholas "Nick" James Murphy, better known by his former stage name Chet Faker, is an Australian electronica singer and musician. In 2012 he issued an extended play, Thinking in Textures and signed to Downtown Records in the United States</p>
+                        <p class=boldText>Genres: Electronica, downtempo, soul music</p>
+                        <div class="bottom">
+                            <a class="btn btn-default btn-sm" rel="publisher" href="https://plus.google.com/shahnuralam"> <span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span></a>
+                            <a class="btn btn-info btn-sm" rel="publisher" href="https://plus.google.com/shahnuralam"> <span class="glyphicon glyphicon-comment" aria-hidden="true"></span></a>
+                            <a class="btn btn-group btn-sm" rel="publisher" href="https://plus.google.com/shahnuralam"> <span class="glyphicon glyphicon-retweet" aria-hidden="true"></span></a>
+                            <a class="btn btn-primary btn-sm" rel="publisher" href="https://plus.google.com/shahnuralam"> <span class="glyphicon glyphicon-share" aria-hidden="true"></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="loadMore">
+        <button class="btn btn-primary btn-md"> Load More</button>
+    </div>
+
+    <nav class="text-center">
+        <!-- Add class .pagination-lg for larger blocks or .pagination-sm for smaller blocks-->
+        <ul class="pagination">
+            <li> <a href="#" aria-label="Previous"> <span aria-hidden="true">&laquo;</span> </a> </li>
+            <li class="active"><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li class="disabled"><a href="#">5</a></li>
+            <li> <a href="#" aria-label="Next"> <span aria-hidden="true">&raquo;</span> </a> </li>
+        </ul>
+    </nav>
+</div>
+<hr>
+
+<footer class="text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <p>Created with <span class="glyphicon glyphicon-heart" aria-hidden="true"></span> love by Melanie & Ann. All rights reserved.</p>
+            </div>
+            <a target="_blank" title="follow me on facebook" href="http://www.facebook.com/soulsound"><img alt="follow me on facebook" src="https://c866088.ssl.cf3.rackcdn.com/assets/facebook30x30.png" border=0></a>
+            <a target="_blank" title="follow me on instagram" href="http://www.instagram.com/soulsound"><img alt="follow me on instagram" src="https://c866088.ssl.cf3.rackcdn.com/assets/instagram30x30.png" border=0></a>
+            <a target="_blank" title="follow me on Twitter" href="http://www.twitter.com/soulsound"><img alt="follow me on twitter" src="https://c866088.ssl.cf3.rackcdn.com/assets/twitter30x30.png" border=0></a>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
