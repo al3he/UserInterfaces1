@@ -1,0 +1,99 @@
+div.myHeading {
+    width: 100%;
+    height: auto;
+    padding-bottom: .5cm;
+    padding-top: .5cm;
+    background-color: lightskyblue;
+    text-align: start;
+    margin:auto;
+}
+
+div.loadMore {
+    display: block;
+    position:relative;
+    text-align: center;
+    margin:auto;
+}
+
+IMG.headDisplayed {
+    display: block;
+    margin-left: auto;
+    margin-right: auto }
+
+.soulSoundImage {
+    display: block;
+    width: 4cm;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+p.boldText{
+    font-weight: bold;
+    font-family: "Raleway", Raleway Bold;
+}
+
+.fontFamily{
+    font-family: "Raleway";
+}
+
+.boldFontFamily{
+    font-family: "Raleway";
+}
+
+.subHeadingDesign{
+    text-decoration: none;
+    font-family: "Raleway";
+    color: slategray;
+    font-size: medium;
+
+}
+
+.sectionBorder {
+    width: auto;
+    height: auto;
+    outline-width: thin;
+    outline-style: solid;
+    outline-color: lightblue;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 3px;
+}
+
+.boxSize{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+li a:hover:not(.active) {
+    background-color: lightcyan;
+    font-weight: bold;
+}
+
+li a:not(.active){
+    color: slategray;
+}
+
+.active {
+    font-weight: bold;
+}
+
+img.smallImage{
+    height: 1cm;
+    width: auto;
+    float: left;
+}
+
+.glyphicon-heart-empty{
+    color: #282828;
+}
+
+.panel{
+    margin:10px;
+    display: none;
+}
+
+.published{
+    margin:5px;
+}
+
