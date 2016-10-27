@@ -18,7 +18,8 @@
 
 </head>
 <body>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script src="Website2Script.js"></script>
 
 <div class="myHeading">
@@ -30,15 +31,62 @@
 
         <div class="collapse navbar-collapse hidden-xs">
             <ul class="nav navbar-nav navbar-left hidden-xs">
-                <li class="active subHeadingDesign"><a href="#">Log In</a> </li>
-                <li class="active subHeadingDesign"> <a href="#">Sign Up</a>
-                </li>
+                <button class="active subHeadingDesign" id="login" onclick="displayModal()"><a href="#">Log In</a> </button>
+                <button class="active subHeadingDesign" id="signup" onclick="displayReg()"> <a href="#">Sign Up</a></button>
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+ <div class="modal-content">
+    <span class="close">×</span>
+    <form>
+  First name:<br>
+  <input type="text" name="firstname" value="">
+  <br>
+  Last name:<br>
+  <input type="text" name="lastname" value="">
+  <br><br>
+  <input type="submit" value="Submit">
+</form>
+  </div>
+
+</div>
+
+<div id="myReg" class="reg">
+    <div class="modal-content">
+    <span class="close">×</span>
+<form class="registration" tag="Create Logon">
+        <div align="center">
+            <br>
+            <header>Sign up information</header><br>
+            Last Name: <input type="surname" name="surname" />
+            First Name: <input type="other names" name="names" />
+            <li>Date of Birth: <input type="dob" name="dob" /></li>
+            <li>Email: <input type="email" name="email" /></li>
+            Confirm Email: <input type="email" name="email" />
+            <br>
+<br><div><header>Registration</header></div>
+            Username: <input type="username" name="username" />
+            <li>Password: <input type="password" name="pwd" /></li>
+            <br>
+<div><header>Other areas of interest</header></div>
+  <input type="text" name="xtrainfo" value=""></form>
+        <input type="submit" value="Submit" />
+        </div>
+    </form>
+</div>
+</div>
+                
             </ul>
         </div>
     </div>
 </nav>
 <hr>
 <hr>
+
+</div>
+
+
 <div class="container">
     <div class="row text-center">
         <h2 class = "subHeadingDesign">Trending Artists in Your Network</h2>
@@ -54,27 +102,38 @@
 
                     <div class="bottom">
 
-                        <button class="btn btn-default btn-sm" id="likeBtn" onclick="turnRed()" rel="publisher"><span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span></button>
+                        <button class="btn btn-default btn-sm"  rel="publisher" id="likeBtn" onclick="turnRed()"><span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span></button>
                         <button class="btn btn-info btn-sm" id="comBtn" rel="publisher"> <span class="glyphicon glyphicon-comment" aria-hidden="true"></span></button>
                         <button class="btn btn-group btn-sm" rel="publisher"> <span class="glyphicon glyphicon-retweet" aria-hidden="true"></span></button>
-                        <button class="btn btn-primary btn-sm" id = "shareBtn" onclick = "shared()" rel="publisher"> <span class="glyphicon glyphicon-share" aria-hidden="true"></span></button>       
-                    </div>
+                        <button class="btn btn-primary btn-sm" id = "shareBtn" onclick = "shared()" rel="publisher"> <span class="glyphicon glyphicon-share" aria-hidden="true"></span></button>  
 
-                    <div class="published" id="published">
-                        <table class="comGrid">
-                        </table>
-                    </div>
+                        <table class="comGrid" id="comTable">
+                    <tr></tr>
+                    <td>
+                    </td>
+                    </table>   
+
+<div class="panel" id="panel">
+  <form method="post" name="comments" id="comments">
+    <div>
+      <textarea name="comments" id="blank">Leave a comment...</textarea>
+    </div>
+    <input type="button" value="Submit" id="submitBtn">
+  </form>
+</div>
 
                 <div class="panel" id="panel">
                                 <form method="post" name="comments" id="comments">
                                     <div>
                                         <textarea name="comments" id = "blank">Leave a comment...</textarea>
                                     </div>
-                                    <input type="button" value="Submit" onclick="publishCom()" id="submitBtn">
+                                    <input type="button" value="Submit" id="submitBtn">
                                 </form>
                             </div>
-                        </div>
+                    </div>
                 </div>
+            </div>
+               
 
             <div class="col-sm-4 col-md-4 col-lg-4 col-xs-12">
                 <div class="thumbnail"> <img src="http://odesza.com/wp-content/uploads/2015/04/Site-Image.jpg" alt="Thumbnail Image 1" class="img-responsive">
@@ -83,10 +142,22 @@
                         <p class=fontFamily>Odesza are an American electronic music duo from Seattle consisting of Harrison Mills and Clayton Knight. The group was formed in 2012.</p>
                         <p class=boldText>Genres: Indie etronic, Electropop, Chillwave </p>
                         <div class="bottom">
-                            <a class="btn btn-default btn-sm" rel="publisher" href="https://plus.google.com/shahnuralam"> <span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span></a>
-                            <a class="btn btn-info btn-sm" rel="publisher" href="https://plus.google.com/shahnuralam"> <span class="glyphicon glyphicon-comment" aria-hidden="true"></span></a>
-                            <a class="btn btn-group btn-sm" rel="publisher" href="https://plus.google.com/shahnuralam"> <span class="glyphicon glyphicon-retweet" aria-hidden="true"></span></a>
-                            <a class="btn btn-primary btn-sm" rel="publisher" href="https://plus.google.com/shahnuralam"> <span class="glyphicon glyphicon-share" aria-hidden="true"></span></a>
+                            <button class="btn btn-default btn-sm" id="likeBtn2" onclick="turnRed2()" rel="publisher"><span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span></button>
+                        <button class="btn btn-info btn-sm" id="comBtn2" rel="publisher"> <span class="glyphicon glyphicon-comment" aria-hidden="true"></span></button>
+                        <button class="btn btn-group btn-sm" rel="publisher"> <span class="glyphicon glyphicon-retweet" aria-hidden="true"></span></button>
+                        <button class="btn btn-primary btn-sm" id = "shareBtn" onclick = "shared()" rel="publisher"> <span class="glyphicon glyphicon-share" aria-hidden="true"></span></button> 
+                        <table class="comGrid" id="comTable2">
+                    <tr></tr>
+                    </table>   
+
+                <div class="panel" id="panel2">
+                                <form method="post" name="comments" id="comments">
+                                    <div>
+                                        <textarea name="comments" id = "blank2">Leave a comment...</textarea>
+                                    </div>
+                                    <input type="button" value="Submit" id="submitBtn2">
+                                </form>
+                            </div> 
                         </div>
                     </div>
                 </div>
@@ -98,10 +169,22 @@
                         <p class=fontFamily>Chance the Rapper American hip hop recording artist from the West Chatham neighborhood of Chicago, Illinois. </p>
                         <p class=boldText>Genres: Hip hop, Gospel rap </p>
                         <div class="bottom">
-                            <a class="btn btn-default btn-sm" rel="publisher" href="https://plus.google.com/shahnuralam"> <span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span></a>
-                            <a class="btn btn-info btn-sm" rel="publisher" href="https://plus.google.com/shahnuralam"> <span class="glyphicon glyphicon-comment" aria-hidden="true"></span></a>
-                            <a class="btn btn-group btn-sm" rel="publisher" href="https://plus.google.com/shahnuralam"> <span class="glyphicon glyphicon-retweet" aria-hidden="true"></span></a>
-                            <a class="btn btn-primary btn-sm" rel="publisher" href="https://plus.google.com/shahnuralam"> <span class="glyphicon glyphicon-share" aria-hidden="true"></span></a>
+                             <button class="btn btn-default btn-sm" id="likeBtn3" onclick="turnRed3()" rel="publisher"><span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span></button>
+                        <button class="btn btn-info btn-sm" id="comBtn3" rel="publisher"> <span class="glyphicon glyphicon-comment" aria-hidden="true"></span></button>
+                        <button class="btn btn-group btn-sm" rel="publisher"> <span class="glyphicon glyphicon-retweet" aria-hidden="true"></span></button>
+                        <button class="btn btn-primary btn-sm" id = "shareBtn" onclick = "shared()" rel="publisher"> <span class="glyphicon glyphicon-share" aria-hidden="true"></span></button> 
+                        <table class="comGrid" id="comTable3">
+                    <tr></tr>
+                    </table>   
+
+                <div class="panel" id="panel3">
+                                <form method="post" name="comments" id="comments">
+                                    <div>
+                                        <textarea name="comments" id = "blank3">Leave a comment...</textarea>
+                                    </div>
+                                    <input type="button" value="Submit" id="submitBtn3">
+                                </form>
+                            </div> 
                         </div>
                     </div>
                 </div>
@@ -117,10 +200,22 @@
                         <p class=fontFamily>Young the Giant is an American rock band that formed in Irvine, California, in 2004. </p>
                         <p class=boldText>Genres: Alternative rock, Indie rock</p>
                         <div class="bottom">
-                            <a class="btn btn-default btn-sm" rel="publisher" href="https://plus.google.com/shahnuralam"> <span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span></a>
-                            <a class="btn btn-info btn-sm" rel="publisher" href="https://plus.google.com/shahnuralam"> <span class="glyphicon glyphicon-comment" aria-hidden="true"></span></a>
-                            <a class="btn btn-group btn-sm" rel="publisher" href="https://plus.google.com/shahnuralam"> <span class="glyphicon glyphicon-retweet" aria-hidden="true"></span></a>
-                            <a class="btn btn-primary btn-sm" rel="publisher" href="https://plus.google.com/shahnuralam"> <span class="glyphicon glyphicon-share" aria-hidden="true"></span></a>
+                              <button class="btn btn-default btn-sm" id="likeBtn4" onclick="turnRed4()" rel="publisher"><span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span></button>
+                        <button class="btn btn-info btn-sm" id="comBtn4" rel="publisher"> <span class="glyphicon glyphicon-comment" aria-hidden="true"></span></button>
+                        <button class="btn btn-group btn-sm" rel="publisher"> <span class="glyphicon glyphicon-retweet" aria-hidden="true"></span></button>
+                        <button class="btn btn-primary btn-sm" id = "shareBtn" onclick = "shared()" rel="publisher"> <span class="glyphicon glyphicon-share" aria-hidden="true"></span></button> 
+                        <table class="comGrid" id="comTable4">
+                    <tr></tr>
+                    </table>   
+
+                <div class="panel" id="panel4">
+                                <form method="post" name="comments" id="comments">
+                                    <div>
+                                        <textarea name="comments" id = "blank4">Leave a comment...</textarea>
+                                    </div>
+                                    <input type="button" value="Submit" id="submitBtn4">
+                                </form>
+                            </div> 
                         </div>
                     </div>
                 </div>
@@ -133,10 +228,21 @@
                         <p class=fontFamily>Tame Impala is an Australian psychedelic rock band founded by Kevin Parker in 2007, which began as a recording project for Parker.</p>
                         <p class=boldText>Genres: Psychedelic rock, Psychedelic pop, Neo-psychedelia</p>
                         <div class="bottom">
-                            <a class="btn btn-default btn-sm" rel="publisher" href="https://plus.google.com/shahnuralam"> <span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span></a>
-                            <a class="btn btn-info btn-sm" rel="publisher" href="https://plus.google.com/shahnuralam"> <span class="glyphicon glyphicon-comment" aria-hidden="true"></span></a>
-                            <a class="btn btn-group btn-sm" rel="publisher" href="https://plus.google.com/shahnuralam"> <span class="glyphicon glyphicon-retweet" aria-hidden="true"></span></a>
-                            <a class="btn btn-primary btn-sm" rel="publisher" href="https://plus.google.com/shahnuralam"> <span class="glyphicon glyphicon-share" aria-hidden="true"></span></a>
+                              <button class="btn btn-default btn-sm" id="likeBtn5" onclick="turnRed5()" rel="publisher"><span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span></button>
+                        <button class="btn btn-info btn-sm" id="comBtn5" rel="publisher"> <span class="glyphicon glyphicon-comment" aria-hidden="true"></span></button>
+                        <button class="btn btn-group btn-sm" rel="publisher"> <span class="glyphicon glyphicon-retweet" aria-hidden="true"></span></button>
+                        <button class="btn btn-primary btn-sm" id = "shareBtn" onclick = "shared()" rel="publisher"> <span class="glyphicon glyphicon-share" aria-hidden="true"></span></button> 
+                        <table class="comGrid" id="comTable5">
+                    <tr></tr>
+                    </table>   
+                <div class="panel" id="panel5">
+                                <form method="post" name="comments" id="comments">
+                                    <div>
+                                        <textarea name="comments" id = "blank5">Leave a comment...</textarea>
+                                    </div>
+                                    <input type="button" value="Submit" id="submitBtn5">
+                                </form>
+                            </div> 
                         </div>
                     </div>
                 </div>
@@ -148,10 +254,22 @@
                         <p class=fontFamily>Jillian Rose Banks is an American singer and songwriter who crafts moody, downcast, alternative pop with shades of contemporary R&B. </p>
                         <p class=boldText>Genres: Alternative R&B, Trip hop, Indie pop</p>
                         <div class="bottom">
-                            <a class="btn btn-default btn-sm" rel="publisher" href="https://plus.google.com/shahnuralam"> <span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span></a>
-                            <a class="btn btn-info btn-sm" rel="publisher" href="https://plus.google.com/shahnuralam"> <span class="glyphicon glyphicon-comment" aria-hidden="true"></span></a>
-                            <a class="btn btn-group btn-sm" rel="publisher" href="https://plus.google.com/shahnuralam"> <span class="glyphicon glyphicon-retweet" aria-hidden="true"></span></a>
-                            <a class="btn btn-primary btn-sm" rel="publisher" href="https://plus.google.com/shahnuralam"> <span class="glyphicon glyphicon-share" aria-hidden="true"></span></a>
+                             <button class="btn btn-default btn-sm" id="likeBtn6" onclick="turnRed6()" rel="publisher"><span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span></button>
+                        <button class="btn btn-info btn-sm" id="comBtn6" rel="publisher"> <span class="glyphicon glyphicon-comment" aria-hidden="true"></span></button>
+                        <button class="btn btn-group btn-sm" rel="publisher"> <span class="glyphicon glyphicon-retweet" aria-hidden="true"></span></button>
+                        <button class="btn btn-primary btn-sm" id = "shareBtn" onclick = "shared()" rel="publisher"> <span class="glyphicon glyphicon-share" aria-hidden="true"></span></button> 
+                        <table class="comGrid" id="comTable6">
+                    <tr></tr>
+                    </table>   
+
+                <div class="panel" id="panel6">
+                                <form method="post" name="comments" id="comments">
+                                    <div>
+                                        <textarea name="comments" id = "blank6">Leave a comment...</textarea>
+                                    </div>
+                                    <input type="button" value="Submit" id="submitBtn6">
+                                </form>
+                            </div> 
                         </div>
                     </div>
                 </div>
@@ -167,10 +285,22 @@
                         <p class=fontFamily>Haim is an American pop rock band from Los Angeles. The band consists of sisters Este, Danielle and Alana Haim, and drummer Dash Hutton.</p>
                         <p class=boldText>Genres: Pop rock, soft rock, R&B</p>
                         <div class="bottom">
-                            <a class="btn btn-default btn-sm" rel="publisher" href="https://plus.google.com/shahnuralam"> <span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span></a>
-                            <a class="btn btn-info btn-sm" rel="publisher" href="https://plus.google.com/shahnuralam"> <span class="glyphicon glyphicon-comment" aria-hidden="true"></span></a>
-                            <a class="btn btn-group btn-sm" rel="publisher" href="https://plus.google.com/shahnuralam"> <span class="glyphicon glyphicon-retweet" aria-hidden="true"></span></a>
-                            <a class="btn btn-primary btn-sm" rel="publisher" href="https://plus.google.com/shahnuralam"> <span class="glyphicon glyphicon-share" aria-hidden="true"></span></a>
+                              <button class="btn btn-default btn-sm" id="likeBtn7" onclick="turnRed7()" rel="publisher"><span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span></button>
+                        <button class="btn btn-info btn-sm" id="comBtn7" rel="publisher"> <span class="glyphicon glyphicon-comment" aria-hidden="true"></span></button>
+                        <button class="btn btn-group btn-sm" rel="publisher"> <span class="glyphicon glyphicon-retweet" aria-hidden="true"></span></button>
+                        <button class="btn btn-primary btn-sm" id = "shareBtn" onclick = "shared()" rel="publisher"> <span class="glyphicon glyphicon-share" aria-hidden="true"></span></button> 
+                        <table class="comGrid" id="comTable7">
+                    <tr></tr>
+                    </table>   
+
+                <div class="panel" id="panel7">
+                                <form method="post" name="comments" id="comments">
+                                    <div>
+                                        <textarea name="comments" id = "blank7">Leave a comment...</textarea>
+                                    </div>
+                                    <input type="button" value="Submit" id="submitBtn7">
+                                </form>
+                            </div> 
                         </div>
                     </div>
                 </div>
@@ -182,10 +312,22 @@
                         <p class=fontFamily>Harley Edward Streten, better known by his stage name Flume, is an Australian record producer and musician. His self-titled debut studio album, Flume, reached double-platinum accreditation in Australia.</p>
                         <p class=boldText>Genres: Electronica, downtempo, experimental</p>
                         <div class="bottom">
-                            <a class="btn btn-default btn-sm" rel="publisher" href="https://plus.google.com/shahnuralam"> <span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span></a>
-                            <a class="btn btn-info btn-sm" rel="publisher" href="https://plus.google.com/shahnuralam"> <span class="glyphicon glyphicon-comment" aria-hidden="true"></span></a>
-                            <a class="btn btn-group btn-sm" rel="publisher" href="https://plus.google.com/shahnuralam"> <span class="glyphicon glyphicon-retweet" aria-hidden="true"></span></a>
-                            <a class="btn btn-primary btn-sm" rel="publisher" href="https://plus.google.com/shahnuralam"> <span class="glyphicon glyphicon-share" aria-hidden="true"></span></a>
+                             <button class="btn btn-default btn-sm" id="likeBtn8" onclick="turnRed8()" rel="publisher"><span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span></button>
+                        <button class="btn btn-info btn-sm" id="comBtn8" rel="publisher"> <span class="glyphicon glyphicon-comment" aria-hidden="true"></span></button>
+                        <button class="btn btn-group btn-sm" rel="publisher"> <span class="glyphicon glyphicon-retweet" aria-hidden="true"></span></button>
+                        <button class="btn btn-primary btn-sm" id = "shareBtn" onclick = "shared()" rel="publisher"> <span class="glyphicon glyphicon-share" aria-hidden="true"></span></button> 
+                        <table class="comGrid" id="comTable8">
+                    <tr></tr>
+                    </table>   
+
+                <div class="panel" id="panel8">
+                                <form method="post" name="comments" id="comments">
+                                    <div>
+                                        <textarea name="comments" id = "blank8">Leave a comment...</textarea>
+                                    </div>
+                                    <input type="button" value="Submit" id="submitBtn8">
+                                </form>
+                            </div> 
                         </div>
                     </div>
                 </div>
@@ -197,10 +339,22 @@
                         <p class=fontFamily>HNicholas "Nick" James Murphy, better known by his former stage name Chet Faker, is an Australian electronica singer and musician. In 2012 he issued an extended play, Thinking in Textures and signed to Downtown Records in the United States</p>
                         <p class=boldText>Genres: Electronica, downtempo, soul music</p>
                         <div class="bottom">
-                            <a class="btn btn-default btn-sm" rel="publisher" href="https://plus.google.com/shahnuralam"> <span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span></a>
-                            <a class="btn btn-info btn-sm" rel="publisher" href="https://plus.google.com/shahnuralam"> <span class="glyphicon glyphicon-comment" aria-hidden="true"></span></a>
-                            <a class="btn btn-group btn-sm" rel="publisher" href="https://plus.google.com/shahnuralam"> <span class="glyphicon glyphicon-retweet" aria-hidden="true"></span></a>
-                            <a class="btn btn-primary btn-sm" rel="publisher" href="https://plus.google.com/shahnuralam"> <span class="glyphicon glyphicon-share" aria-hidden="true"></span></a>
+                            <button class="btn btn-default btn-sm" id="likeBtn9" onclick="turnRed9()" rel="publisher"><span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span></button>
+                        <button class="btn btn-info btn-sm" id="comBtn9" rel="publisher"> <span class="glyphicon glyphicon-comment" aria-hidden="true"></span></button>
+                        <button class="btn btn-group btn-sm" rel="publisher"> <span class="glyphicon glyphicon-retweet" aria-hidden="true"></span></button>
+                        <button class="btn btn-primary btn-sm" id = "shareBtn" onclick = "shared()" rel="publisher"> <span class="glyphicon glyphicon-share" aria-hidden="true"></span></button> 
+                        <table class="comGrid" id="comTable9">
+                    <tr></tr>
+                    </table>   
+
+                <div class="panel" id="panel9">
+                                <form method="post" name="comments" id="comments">
+                                    <div>
+                                        <textarea name="comments" id = "blank9">Leave a comment...</textarea>
+                                    </div>
+                                    <input type="button" value="Submit" id="submitBtn9">
+                                </form>
+                            </div> 
                         </div>
                     </div>
                 </div>
